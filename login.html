@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - STEM INFOTECH</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --violet-dark: #1B0052;
+            --accent: #FFFFFF;
+            --pink: #C86FBF;
+            --violet-light: #5725F8;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--violet-dark), var(--violet-light));
+            min-height: 100vh;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .floating-shapes::before,
+        .floating-shapes::after {
+            content: '';
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--pink), var(--violet-light));
+            animation: float 20s infinite linear;
+            z-index: -1;
+        }
+
+        .floating-shapes::before {
+            top: -150px;
+            left: -150px;
+        }
+
+        .floating-shapes::after {
+            bottom: -150px;
+            right: -150px;
+            animation-delay: -10s;
+        }
+
+        @keyframes float {
+            0% { transform: rotate(0deg) translate(0, 0); }
+            50% { transform: rotate(180deg) translate(50px, 50px); }
+            100% { transform: rotate(360deg) translate(0, 0); }
+        }
+
+        .input-field {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .input-field:focus {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .social-btn {
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .social-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center p-6 relative overflow-hidden">
+    <div class="floating-shapes"></div>
+    
+    <div class="glass-card rounded-2xl p-8 w-full max-w-md relative z-10">
+        <div class="flex justify-center mb-8">
+            <img src="./STEM INFOS ICON.png" alt="STEM INFOS Logo" class="h-16 w-auto">
+        </div>
+
+        <h2 class="text-3xl font-bold text-white text-center mb-8">Welcome Back</h2>
+
+        <form class="space-y-6">
+            <div>
+                <input type="email" placeholder="Email" class="input-field w-full px-4 py-3 rounded-lg outline-none placeholder-gray-300">
+            </div>
+            <div>
+                <input type="password" placeholder="Password" class="input-field w-full px-4 py-3 rounded-lg outline-none placeholder-gray-300">
+            </div>
+
+            <div class="flex items-center justify-between text-sm">
+                <label class="flex items-center text-white">
+                    <input type="checkbox" class="mr-2">
+                    Remember me
+                </label>
+                <a href="#" class="text-white hover:text-[var(--pink)] transition-colors">Forgot Password?</a>
+            </div>
+
+            <button class="w-full bg-[var(--violet-light)] hover:bg-[var(--pink)] text-white py-3 rounded-lg font-semibold transition-all duration-300 hover:shadow-lg">
+                Sign In
+            </button>
+
+            <div class="relative my-8">
+                <div class="absolute inset-0 flex items-center">
+                    <div class="w-full border-t border-gray-300 opacity-20"></div>
+                </div>
+                <div class="relative flex justify-center text-sm">
+                    <span class="px-4 text-white bg-[var(--violet-dark)]">Or continue with</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-4">
+                <button class="social-btn flex items-center justify-center px-4 py-2 rounded-lg text-white">
+                    <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12.545,12.151L12.545,12.151c0,1.054,0.947,1.91,2.012,1.91h2.322c1.065,0,1.932-0.856,1.932-1.91v-2.322c0-1.054-0.867-1.91-1.932-1.91h-2.322c-1.065,0-2.012,0.856-2.012,1.91V12.151z M12.545,12.151"></path>
+                    </svg>
+                    Google
+                </button>
+                <button class="social-btn flex items-center justify-center px-4 py-2 rounded-lg text-white">
+                    <svg class="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12,2A10,10,0,0,0,2,12a10.09,10.09,0,0,0,6.84,9.49.77.77,0,0,0,.16,0A.58.58,0,0,0,9,21V17.73h-2a3.14,3.14,0,0,1-.4-6.22A.56.56,0,0,0,7,11a.58.58,0,0,0-.58-.58H6.21a4.29,4.29,0,0,1,1.58-3A4.27,4.27,0,0,1,11,6.21a4.37,4.37,0,0,1,4.19,4.2v.18a.58.58,0,0,0,.58.58h1.84a2.59,2.59,0,0,1,0,5.18H15v3.3a.58.58,0,0,0,.58.58.77.77,0,0,0,.16,0A10,10,0,0,0,12,2Z"></path>
+                    </svg>
+                    GitHub
+                </button>
+            </div>
+
+            <p class="text-center text-white mt-8">
+                Don't have an account? 
+                <a href="#" class="text-[var(--pink)] hover:text-white transition-colors font-semibold">Sign up</a>
+            </p>
+        </form>
+    </div>
+</body>
+</html>
