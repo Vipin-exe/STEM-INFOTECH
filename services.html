@@ -22,6 +22,26 @@
       box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
     }
   </style>
+  
+  <style>
+    /* Mobile Menu Styles */
+    .mobile-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      transition: all 0.3s ease;
+      transform: translateY(-10px);
+      opacity: 0;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    .mobile-menu:not(.hidden) {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  </style>
 </head>
 <body class="font-sans text-gray-900 overflow-x-hidden">
   <!-- Header with Navigation -->
@@ -39,26 +59,24 @@
         <div class="hidden md:flex items-center space-x-8">
           <a href="index.html" class="text-[var(--violet-dark)] hover:text-[var(--accent)] transition-colors">Home</a>
           <a href="services.html" class="text-[var(--accent)] font-semibold">Services</a>
-          <a href="login.html" class="text-[var(--violet-dark)] hover:text-[var(--accent)] transition-colors">Login</a>
+          <a href="about-us.html" class="text-[var(--violet-dark)] hover:text-[var(--accent)] transition-colors">About Us</a>
         </div>
 
-        <!-- Mobile Menu Button -->
-        <div class="md:hidden">
-          <button type="button" class="mobile-menu-button" onclick="toggleMobileMenu()">
-            <svg class="h-6 w-6 text-[var(--violet-dark)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
-          </button>
+        <!-- Mobile Menu -->
+        <div class="mobile-menu md:hidden hidden">
+          <div class="px-2 pt-2 pb-3 space-y-1">
+            <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-[var(--violet-dark)] hover:text-[var(--accent)] hover:bg-gray-50 transition-colors">Home</a>
+            <a href="services.html" class="block px-3 py-2 rounded-md text-base font-medium text-[var(--accent)] bg-gray-50">Services</a>
+            <a href="about-us.html" class="block px-3 py-2 rounded-md text-base font-medium text-[var(--violet-dark)] hover:text-[var(--accent)] hover:bg-gray-50 transition-colors">About Us</a>
+          </div>
         </div>
-      </div>
-
-      <!-- Mobile Menu -->
-      <div class="mobile-menu md:hidden hidden">
-        <div class="px-2 pt-2 pb-3 space-y-1">
-          <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-[var(--violet-dark)] hover:text-[var(--accent)] hover:bg-gray-50 transition-colors">Home</a>
-          <a href="services.html" class="block px-3 py-2 rounded-md text-base font-medium text-[var(--accent)] bg-gray-50">Services</a>
-          <a href="login.html" class="block px-3 py-2 rounded-md text-base font-medium text-[var(--violet-dark)] hover:text-[var(--accent)] hover:bg-gray-50 transition-colors">Login</a>
-        </div>
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden">
+        <button type="button" class="mobile-menu-button" onclick="toggleMobileMenu()">
+          <svg class="h-6 w-6 text-[var(--violet-dark)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
       </div>
     </nav>
   </header>
@@ -128,14 +146,14 @@
         </a>
 
         <!-- Bug Bounty Card -->
-        <a href="bug-bounding.html" class="service-card bg-white rounded-xl shadow-lg overflow-hidden">
+        <a href="bug-bounty.html" class="service-card bg-white rounded-xl shadow-lg overflow-hidden">
           <div class="p-8">
             <div class="w-12 h-12 bg-[var(--violet-light)]/10 rounded-lg flex items-center justify-center mb-6">
               <svg class="w-6 h-6 text-[var(--violet-light)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
               </svg>
             </div>
-            <h3 class="text-xl font-bold text-[var(--violet-dark)] mb-3">Bug Bounding</h3>
+            <h3 class="text-xl font-bold text-[var(--violet-dark)] mb-3">Bug Bounty</h3>
             <p class="text-gray-600">Security testing and vulnerability rewards program.</p>
           </div>
         </a>
