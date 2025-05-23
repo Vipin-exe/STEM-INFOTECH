@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Data Digitalization - STEM INFOS</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <style>
+    :root {
+      --violet-dark: #1B0052;
+      --accent: #9D4EDD;
+      --pink: #C86FBF;
+      --violet-light: #5725F8;
+    }
+
+    /* Service Card Hover Effects */
+    .service-card {
+      transition: all 0.4s ease;
+      background: white;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Process Item Animation */
+    .process-item {
+      animation: fadeInUp 0.8s ease-out forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Mobile Menu Styles */
+    .mobile-menu {
+      display: none;
+    }
+
+    .mobile-menu.show {
+      display: block;
+    }
+
+    /* Floating Bubbles Animation */
+    .bubbles-container {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .bubble {
+      position: absolute;
+      bottom: -100px;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      animation: rise 15s infinite ease-in;
+      opacity: 0;
+    }
+
+    .bubble:nth-child(1) { left: 10%; animation-duration: 8s; animation-delay: 1s; }
+    .bubble:nth-child(2) { left: 20%; animation-duration: 10s; animation-delay: 2s; }
+    .bubble:nth-child(3) { left: 30%; animation-duration: 7s; animation-delay: 3s; }
+    .bubble:nth-child(4) { left: 40%; animation-duration: 11s; animation-delay: 4s; }
+    .bubble:nth-child(5) { left: 50%; animation-duration: 9s; animation-delay: 5s; }
+    .bubble:nth-child(6) { left: 60%; animation-duration: 12s; animation-delay: 6s; }
+    .bubble:nth-child(7) { left: 70%; animation-duration: 8s; animation-delay: 7s; }
+    .bubble:nth-child(8) { left: 80%; animation-duration: 10s; animation-delay: 8s; }
+    .bubble:nth-child(9) { left: 90%; animation-duration: 9s; animation-delay: 9s; }
+    .bubble:nth-child(10) { left: 95%; animation-duration: 11s; animation-delay: 10s; }
+
+    @keyframes rise {
+      0% {
+        bottom: -100px;
+        transform: translateX(0);
+        opacity: 0;
+      }
+      50% {
+        transform: translateX(100px);
+        opacity: 0.8;
+      }
+      100% {
+        bottom: 100%;
+        transform: translateX(-100px);
+        opacity: 0;
+      }
+    }
+
+    /* Add shimmer effect to bubbles */
+    .bubble::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 50%;
+      background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      animation: shimmer 3s infinite;
+    }
+
+    @keyframes shimmer {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+
+    /* Wave Animation */
+    .wave1, .wave2, .wave3 {
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 40%;
+      transform-origin: 50% 48%;
+      left: -50%;
+      top: -100%;
+    }
+
+    .wave1 { animation: wave 12s infinite linear; }
+    .wave2 { animation: wave 8s infinite linear; opacity: 0.3; }
+    .wave3 { animation: wave 6s infinite linear; opacity: 0.2; }
+
+    @keyframes wave {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* Fade In Animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate-fadeIn {
+      animation: fadeIn 0.8s ease-out forwards;
+      opacity: 0;
+    }
+
+    .animation-delay-200 {
+      animation-delay: 0.2s;
+    }
+
+    .animation-delay-400 {
+      animation-delay: 0.4s;
+    }
+
+    /* Button Hover Effect */
+    .hover\:scale-105:hover {
+      transform: scale(1.05);
+    }
+
+    .transition-all {
+      transition: all 0.3s ease;
+    }
+</style>
+</head>
+<body class="font-sans text-gray-900 overflow-x-hidden">
+  <!-- Header with Navigation -->
+  <header class="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-gray-100">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <!-- Logo -->
+        <div class="flex-shrink-0">
+          <a href="index.html" class="flex items-center">
+            <img src="./STEM INFOS FOR WHITE BG(1)(1).png" alt="STEM INFOS Logo" class="h-8 w-auto">
+          </a>
+        </div>
+
+        <!-- Desktop Navigation -->
+        <div class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="text-[var(--violet-dark)] hover:text-[var(--accent)] transition-colors">Home</a>
+          <a href="software-development.html" class="text-[var(--violet-dark)] hover:text-[var(--accent)] transition-colors">Software Development</a>
+          <a href="cloud-solutions.html" class="text-[var(--violet-dark)] hover:text-[var(--accent)] transition-colors">Cloud Solutions</a>
+          <a href="data-digitalization.html" class="text-[var(--accent)] font-semibold">Data Digitalization</a>
+          <a href="online-courses.html" class="text-[var(--violet-dark)] hover:text-[var(--accent)] transition-colors">Online Courses</a>
+          <a href="bug-bounty.html" class="text-[var(--violet-dark)] hover:text-[var(--accent)] transition-colors">Bug Bounty</a>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <div class="md:hidden">
+          <button id="menuBtn" class="p-2 rounded-md hover:bg-gray-100 focus:outline-none">
+            <svg class="h-6 w-6 text-[var(--violet-dark)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobileMenu" class="mobile-menu w-full absolute left-0 top-16 bg-white shadow-lg z-50">
+        <div class="px-2 pt-2 pb-3 space-y-1">
+          <a href="index.html" class="block px-3 py-2 rounded-md text-base font-medium text-[var(--violet-dark)] hover:text-[var(--accent)] hover:bg-gray-50 transition-colors">Home</a>
+          <a href="software-development.html" class="block px-3 py-2 rounded-md text-base font-medium text-[var(--violet-dark)] hover:text-[var(--accent)] hover:bg-gray-50 transition-colors">Software Development</a>
+          <a href="cloud-solutions.html" class="block px-3 py-2 rounded-md text-base font-medium text-[var(--violet-dark)] hover:text-[var(--accent)] hover:bg-gray-50 transition-colors">Cloud Solutions</a>
+          <a href="data-digitalization.html" class="block px-3 py-2 rounded-md text-base font-medium text-[var(--accent)] bg-gray-50">Data Digitalization</a>
+          <a href="online-courses.html" class="block px-3 py-2 rounded-md text-base font-medium text-[var(--violet-dark)] hover:text-[var(--accent)] hover:bg-gray-50 transition-colors">Online Courses</a>
+          <a href="bug-bounty.html" class="block px-3 py-2 rounded-md text-base font-medium text-[var(--violet-dark)] hover:text-[var(--accent)] hover:bg-gray-50 transition-colors">Bug Bounty</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-[var(--violet-dark)] via-[var(--violet-light)] to-[var(--pink)] py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Data Digitalization Services</h1>
+      <p class="text-xl text-white/90 max-w-2xl mx-auto">Transform your physical documents into searchable, secure digital assets with our advanced digitalization solutions</p>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-center text-[var(--violet-dark)] mb-12">Our Digital Solutions</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- OCR Technology -->
+        <div class="service-card p-6 rounded-xl">
+          <div class="w-12 h-12 bg-[var(--violet-light)]/10 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-[var(--violet-light)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[var(--violet-dark)] mb-2">OCR Technology</h3>
+          <p class="text-gray-600">Convert printed or handwritten text into machine-encoded text with high accuracy</p>
+        </div>
+
+        <!-- Secure Storage -->
+        <div class="service-card p-6 rounded-xl">
+          <div class="w-12 h-12 bg-[var(--violet-light)]/10 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-[var(--violet-light)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[var(--violet-dark)] mb-2">Secure Storage</h3>
+          <p class="text-gray-600">Store your digital documents in encrypted, cloud-based systems with backup protection</p>
+        </div>
+
+        <!-- Smart Search -->
+        <div class="service-card p-6 rounded-xl">
+          <div class="w-12 h-12 bg-[var(--violet-light)]/10 rounded-full flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-[var(--violet-light)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-[var(--violet-dark)] mb-2">Smart Search</h3>
+          <p class="text-gray-600">Quickly find any document with our advanced search and indexing capabilities</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-center text-[var(--violet-dark)] mb-12">Our Digitalization Process</h2>
+      <div class="grid md:grid-cols-4 gap-8">
+        <!-- Step 1 -->
+        <div class="process-item text-center" style="animation-delay: 0.1s">
+          <div class="w-16 h-16 bg-[var(--violet-light)]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-xl font-bold text-[var(--violet-light)]">1</span>
+          </div>
+          <h3 class="text-lg font-bold text-[var(--violet-dark)] mb-2">Document Collection</h3>
+          <p class="text-gray-600">Gather and organize your physical documents</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="process-item text-center" style="animation-delay: 0.2s">
+          <div class="w-16 h-16 bg-[var(--violet-light)]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-xl font-bold text-[var(--violet-light)]">2</span>
+          </div>
+          <h3 class="text-lg font-bold text-[var(--violet-dark)] mb-2">Scanning</h3>
+          <p class="text-gray-600">High-quality scanning of documents</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="process-item text-center" style="animation-delay: 0.3s">
+          <div class="w-16 h-16 bg-[var(--violet-light)]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-xl font-bold text-[var(--violet-light)]">3</span>
+          </div>
+          <h3 class="text-lg font-bold text-[var(--violet-dark)] mb-2">Processing</h3>
+          <p class="text-gray-600">OCR and data extraction</p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="process-item text-center" style="animation-delay: 0.4s">
+          <div class="w-16 h-16 bg-[var(--violet-light)]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-xl font-bold text-[var(--violet-light)]">4</span>
+          </div>
+          <h3 class="text-lg font-bold text-[var(--violet-dark)] mb-2">Digital Delivery</h3>
+          <p class="text-gray-600">Secure access to digital files</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-16 relative overflow-hidden">
+    <!-- Animated Background -->
+    <div class="absolute inset-0 bg-gradient-to-r from-[var(--violet-dark)] to-[var(--violet-light)]">
+      <div class="animate-wave wave1"></div>
+      <div class="animate-wave wave2"></div>
+      <div class="animate-wave wave3"></div>
+    </div>
+    
+    <!-- Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6 animate-fadeIn">Ready to Digitalize Your Documents?</h2>
+        <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto animate-fadeIn animation-delay-200">Get started with our professional digitalization services today</p>
+        <a href="#contact" class="inline-block bg-white text-[var(--violet-dark)] px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-all hover:scale-105 animate-fadeIn animation-delay-400">Contact Us</a>
+      </div>
+    </div>
+  </section>
+</head>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('show');
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target)) {
+        mobileMenu.classList.remove('show');
+      }
+    });
+
+    // Close menu on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        mobileMenu.classList.remove('show');
+      }
+    });
+  });
+  </script>
+   <!-- Enhanced Footer -->
+   <footer class="bg-[var(--violet-dark)] text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-8">
+        <!-- About Us -->
+        <div>
+          <h4 class="text-lg font-semibold mb-4">About Us</h4>
+          <p class="text-gray-300">STEM INFOTECH provides innovative technology solutions to help businesses thrive in the digital age.</p>
+        </div>
+
+        <!-- Contact -->
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Contact</h4>
+          <ul class="space-y-2 text-gray-300">
+            <li>Email: info@steminfos.com</li>
+            <li>Phone: +1 234 567 890</li>
+            <li>Address: 123 Tech Street, Digital City</li>
+          </ul>
+        </div>
+        
+        <!-- Developed By -->
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Developed By</h4>
+          <p class="text-gray-300">HACKANDSLASH STUDIOS.</p>
+        </div>
+        
+        <!-- Follow Us -->
+        <div>
+          <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
+          <div class="flex gap-4">
+            <a href="#" class="text-gray-300 hover:text-white transition-colors">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="#" class="text-gray-300 hover:text-white transition-colors">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
+            </a>
+            <a href="#" class="text-gray-300 hover:text-white transition-colors">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
