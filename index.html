@@ -279,33 +279,36 @@
               </svg>
             </a>
             <div class="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50">
-              <a href="./software-development.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Software Development</a>
-              <a href="#cloud" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Cloud Solutions</a>
+              <a href="software-development.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Software Development</a>
+              <a href="cloud-solutions.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Cloud Solutions</a>
+              <a href="data-digitalization.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Data Digitalization</a>
+              <a href="online-courses.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Online Courses</a>
+              <a href="bug-bounty.html" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Bug Bounty</a>
             </div>
           </div>
-          <a href="#solutions" class="nav-link text-gray-700 hover:text-[var(--violet-light)] font-medium">Solutions</a>
-          <a href="#about" class="nav-link text-gray-700 hover:text-[var(--violet-light)] font-medium">About</a>
+          <a href="about-us.html" class="nav-link text-gray-700 hover:text-[var(--violet-light)] font-medium">About</a>
+          <a href="services.html" class="nav-link text-gray-700 hover:text-[var(--violet-light)] font-medium">Services</a>
           <a href="#contact" class="nav-link text-gray-700 hover:text-[var(--violet-light)] font-medium">Contact</a>
+          <a href="login.html" class="nav-link text-gray-700 hover:text-[var(--violet-light)] font-medium">Login</a>
         </nav>
 
-        <!-- Mobile Menu Button -->
-        <!-- Mobile Menu Button -->
-        <button class="mobile-menu-button lg:hidden text-gray-600 focus:outline-none" onclick="toggleMobileMenu()">
-          <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-          </svg>
-        </button>
-      </div>
-
-      <!-- Enhanced Mobile Navigation -->
-      <div class="mobile-menu lg:hidden absolute left-0 right-0 top-full px-4 pt-2 pb-4">
-        <nav class="flex flex-col space-y-4">
-          <a href="#services" class="text-gray-700 hover:text-[var(--violet-light)] font-medium px-4 py-2 rounded-lg hover:bg-gray-50">Services</a>
-          <a href="#solutions" class="text-gray-700 hover:text-[var(--violet-light)] font-medium px-4 py-2 rounded-lg hover:bg-gray-50">Solutions</a>
-          <a href="#about" class="text-gray-700 hover:text-[var(--violet-light)] font-medium px-4 py-2 rounded-lg hover:bg-gray-50">About</a>
-          <a href="#contact" class="text-gray-700 hover:text-[var(--violet-light)] font-medium px-4 py-2 rounded-lg hover:bg-gray-50">Contact</a>
-        </nav>
-      </div>
+        <!-- Mobile Navigation -->
+        <div class="mobile-menu lg:hidden absolute left-0 right-0 top-full px-4 pt-2 pb-4">
+          <nav class="flex flex-col space-y-4">
+            <div class="space-y-2">
+              <p class="text-sm font-semibold text-gray-500 px-4">Services</p>
+              <a href="software-development.html" class="text-gray-700 hover:text-[var(--violet-light)] font-medium px-4 py-2 rounded-lg hover:bg-gray-50 block">Software Development</a>
+              <a href="cloud-solutions.html" class="text-gray-700 hover:text-[var(--violet-light)] font-medium px-4 py-2 rounded-lg hover:bg-gray-50 block">Cloud Solutions</a>
+              <a href="data-digitalization.html" class="text-gray-700 hover:text-[var(--violet-light)] font-medium px-4 py-2 rounded-lg hover:bg-gray-50 block">Data Digitalization</a>
+              <a href="online-courses.html" class="text-gray-700 hover:text-[var(--violet-light)] font-medium px-4 py-2 rounded-lg hover:bg-gray-50 block">Online Courses</a>
+              <a href="bug-bounty.html" class="text-gray-700 hover:text-[var(--violet-light)] font-medium px-4 py-2 rounded-lg hover:bg-gray-50 block">Bug Bounty</a>
+            </div>
+            <a href="about-us.html" class="text-gray-700 hover:text-[var(--violet-light)] font-medium px-4 py-2 rounded-lg hover:bg-gray-50">About</a>
+            <a href="services.html" class="text-gray-700 hover:text-[var(--violet-light)] font-medium px-4 py-2 rounded-lg hover:bg-gray-50">Services</a>
+            <a href="#contact" class="text-gray-700 hover:text-[var(--violet-light)] font-medium px-4 py-2 rounded-lg hover:bg-gray-50">Contact</a>
+            <a href="login.html" class="text-gray-700 hover:text-[var(--violet-light)] font-medium px-4 py-2 rounded-lg hover:bg-gray-50">Login</a>
+          </nav>
+        </div>
     </div>
   </header>
 
@@ -337,57 +340,67 @@
         <h3 class="text-3xl lg:text-4xl font-bold text-[var(--violet-dark)] mb-4">Our Services</h3>
         <p class="text-gray-600 max-w-2xl mx-auto">Comprehensive solutions tailored to meet your business needs and drive digital transformation.</p>
       </div>
+      <!-- Update the service cards with proper links -->
       <div class="grid md:grid-cols-3 gap-8">
-        <div class="service-card rounded-xl p-8">
-          <div class="mb-6 text-[var(--violet-light)]">
-            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-            </svg>
-          </div>
-          <h4 class="text-xl font-semibold text-[var(--violet-dark)] mb-4">Software Development</h4>
-          <p class="text-gray-600 mb-6">Custom applications built for scalability, security, and innovation using cutting-edge technologies.</p>
-          <a href="#" class="text-[var(--violet-light)] font-medium hover:text-[var(--violet-dark)] transition-colors">Learn More →</a>
+      <!-- Software Development Card -->
+      <div class="service-card rounded-xl p-8">
+        <div class="mb-6 text-[var(--violet-light)]">
+          <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+          </svg>
         </div>
-        <div class="service-card rounded-xl p-8">
-          <div class="mb-6 text-[var(--pink)]">
-            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path>
-            </svg>
-          </div>
-          <h4 class="text-xl font-semibold text-[var(--pink)] mb-4">Cloud Solutions</h4>
-          <p class="text-gray-600 mb-6">Seamless migration and cloud-native architecture for enhanced scalability and performance.</p>
-          <a href="#" class="text-[var(--pink)] font-medium hover:text-[var(--violet-dark)] transition-colors">Learn More →</a>
+        <h4 class="text-xl font-semibold text-[var(--violet-dark)] mb-4">Software Development</h4>
+        <p class="text-gray-600 mb-6">Custom applications built for scalability, security, and innovation using cutting-edge technologies.</p>
+        <a href="software-development.html" class="text-[var(--violet-light)] font-medium hover:text-[var(--violet-dark)] transition-colors">Learn More →</a>
+      </div>
+      
+      <!-- Cloud Solutions Card -->
+      <div class="service-card rounded-xl p-8">
+        <div class="mb-6 text-[var(--pink)]">
+          <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path>
+          </svg>
         </div>
-        <div class="service-card rounded-xl p-8">
-          <div class="mb-6 text-[var(--accent)]">
-            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-            </svg>
-          </div>
-          <h4 class="text-xl font-semibold text-[var(--accent)] mb-4">Data Digitization</h4>
-          <p class="text-gray-600 mb-6">Transform your physical documents into digital assets with our advanced digitization services.</p>
-          <a href="#" class="text-[var(--accent)] font-medium hover:text-[var(--violet-dark)] transition-colors">Learn More →</a>
+        <h4 class="text-xl font-semibold text-[var(--pink)] mb-4">Cloud Solutions</h4>
+        <p class="text-gray-600 mb-6">Seamless migration and cloud-native architecture for enhanced scalability and performance.</p>
+        <a href="cloud-solutions.html" class="text-[var(--pink)] font-medium hover:text-[var(--violet-dark)] transition-colors">Learn More →</a>
+      </div>
+      
+      <!-- Data Digitization Card -->
+      <div class="service-card rounded-xl p-8">
+        <div class="mb-6 text-[var(--accent)]">
+          <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+          </svg>
         </div>
-        <div class="service-card rounded-xl p-8">
-          <div class="mb-6 text-[var(--violet-light)]">
-            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
-            </svg>
-          </div>
-          <h4 class="text-xl font-semibold text-[var(--violet-light)] mb-4">Online Courses</h4>
-          <p class="text-gray-600 mb-6">Professional development courses designed to enhance your skills in technology and business.</p>
-          <a href="#" class="text-[var(--violet-light)] font-medium hover:text-[var(--violet-dark)] transition-colors">Learn More →</a>
+        <h4 class="text-xl font-semibold text-[var(--accent)] mb-4">Data Digitization</h4>
+        <p class="text-gray-600 mb-6">Transform your physical documents into digital assets with our advanced digitization services.</p>
+        <a href="data-digitalization.html" class="text-[var(--accent)] font-medium hover:text-[var(--violet-dark)] transition-colors">Learn More →</a>
+      </div>
+      
+      <!-- Online Courses Card -->
+      <div class="service-card rounded-xl p-8">
+        <div class="mb-6 text-[var(--violet-light)]">
+          <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+          </svg>
         </div>
-        <div class="service-card rounded-xl p-8">
-          <div class="mb-6 text-[var(--pink)]">
-            <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
-            </svg>
-          </div>
-          <h4 class="text-xl font-semibold text-[var(--pink)] mb-4">Bug Bounty</h4>
-          <p class="text-gray-600 mb-6">Strengthen your security through our managed bug bounty program and security assessments.</p>
-          <a href="#" class="text-[var(--pink)] font-medium hover:text-[var(--violet-dark)] transition-colors">Learn More →</a>
+        <h4 class="text-xl font-semibold text-[var(--violet-light)] mb-4">Online Courses</h4>
+        <p class="text-gray-600 mb-6">Professional development courses designed to enhance your skills in technology and business.</p>
+        <a href="online-courses.html" class="text-[var(--violet-light)] font-medium hover:text-[var(--violet-dark)] transition-colors">Learn More →</a>
+      </div>
+      
+      <!-- Bug Bounty Card -->
+      <div class="service-card rounded-xl p-8">
+        <div class="mb-6 text-[var(--pink)]">
+          <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+          </svg>
         </div>
+        <h4 class="text-xl font-semibold text-[var(--pink)] mb-4">Bug Bounty</h4>
+        <p class="text-gray-600 mb-6">Strengthen your security through our managed bug bounty program and security assessments.</p>
+        <a href="bug-bounty.html" class="text-[var(--pink)] font-medium hover:text-[var(--violet-dark)] transition-colors">Learn More →</a>
+      </div>
       </div>
     </div>
   </section>
