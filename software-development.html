@@ -23,8 +23,7 @@
         <!-- Logo -->
         <div class="flex-shrink-0">
           <a href="index.html" class="flex items-center">
-            <img src="STEM INFOS ICON.png" alt="STEM INFOS Logo" class="h-8 w-auto">
-            <span class="ml-2 text-xl font-bold text-[var(--violet-dark)]">STEM INFOS</span>
+            <img src="./STEM INFOS FOR WHITE BG(1)(1).png" alt="logo vei da bunda" class="h-8 w-auto">
           </a>
         </div>
 
@@ -146,7 +145,148 @@
   
   <!-- CTA Section -->
   <style>
-    /* Animations */
+    /* Animation Keyframes */
+    @keyframes slideInFromLeft {
+      0% {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+  
+    @keyframes slideInFromRight {
+      0% {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+  
+    @keyframes fadeInUp {
+      0% {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  
+    @keyframes scaleIn {
+      0% {
+        transform: scale(0.9);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+  
+    /* Animated Elements */
+    .hero-title {
+      animation: slideInFromLeft 1s ease-out;
+    }
+  
+    .hero-description {
+      animation: slideInFromRight 1s ease-out 0.3s;
+      animation-fill-mode: both;
+    }
+  
+    .process-item {
+      animation: fadeInUp 0.6s ease-out;
+      animation-fill-mode: both;
+    }
+  
+    .process-item:nth-child(1) { animation-delay: 0.2s; }
+    .process-item:nth-child(2) { animation-delay: 0.4s; }
+    .process-item:nth-child(3) { animation-delay: 0.6s; }
+    .process-item:nth-child(4) { animation-delay: 0.8s; }
+  
+    .tech-grid div {
+      animation: scaleIn 0.5s ease-out;
+      animation-fill-mode: both;
+    }
+  
+    .tech-grid div:nth-child(1) { animation-delay: 0.3s; }
+    .tech-grid div:nth-child(2) { animation-delay: 0.4s; }
+    .tech-grid div:nth-child(3) { animation-delay: 0.5s; }
+    .tech-grid div:nth-child(4) { animation-delay: 0.6s; }
+  
+    /* Hover Animations */
+    .nav-link {
+      position: relative;
+      transition: color 0.3s ease;
+    }
+  
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background-color: var(--accent);
+      transition: width 0.3s ease;
+    }
+  
+    .nav-link:hover::after {
+      width: 100%;
+    }
+  
+    .service-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+  
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+  
+    /* Scroll Reveal Animation */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+  
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  
+    /* Button Animation */
+    .animated-button {
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+  
+    .animated-button::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.6s ease, height 0.6s ease;
+    }
+  
+    .animated-button:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+  
     @keyframes fadeInUp {
       from {
         opacity: 0;
@@ -276,8 +416,8 @@
     </div>
   </section>
   
-   <!-- Enhanced Footer -->
-   <footer class="bg-[var(--violet-dark)] text-white py-12">
+  <!-- Enhanced Footer -->
+  <footer class="bg-[var(--violet-dark)] text-white py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid md:grid-cols-4 gap-8">
         <!-- About Us -->
@@ -290,9 +430,9 @@
         <div>
           <h4 class="text-lg font-semibold mb-4">Contact</h4>
           <ul class="space-y-2 text-gray-300">
-            <li>Email: info@steminfos.com</li>
-            <li>Phone: +1 234 567 890</li>
-            <li>Address: 123 Tech Street, Digital City</li>
+            <li>Email: Stem.infotech11@gmail.com</li>
+            <li>Phone: +91 7010920792</li>
+            <li>Address: NO 23b tk nambi street kanchipuram tamilnadu india 631501</li>
           </ul>
         </div>
         
@@ -469,3 +609,22 @@
   </footer>
 </body>
 </html>
+
+<script>
+  // Scroll Reveal Animation
+  function revealOnScroll() {
+    const reveals = document.querySelectorAll('.reveal');
+    
+    reveals.forEach(element => {
+      const elementTop = element.getBoundingClientRect().top;
+      const elementVisible = 150;
+      
+      if (elementTop < window.innerHeight - elementVisible) {
+        element.classList.add('active');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', revealOnScroll);
+  window.addEventListener('load', revealOnScroll);
+</script>
